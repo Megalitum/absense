@@ -46,7 +46,7 @@ namespace BindSense.cs
 
 		public object Clone()
 		{
-			return this.MemberwiseClone();
+			return new Preset(new Dictionary<string, string>(this.eventsMap));
 		}
 	}
 
