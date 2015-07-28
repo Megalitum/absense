@@ -12,7 +12,6 @@ namespace BindSense.cs
 {
     public partial class MainForm : Form
     {
-        private ApplicationMatcher appMatcher = new ApplicationMatcher();
         //private Thread trackingThread;
         //private PXCMSession realSession = PXCMSession.CreateInstance();
         public MainForm()
@@ -25,7 +24,6 @@ namespace BindSense.cs
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.trayIcon.Icon = this.Icon;
             this.trayIcon.Visible = true;
             //trackingThread = new Thread(() =>
             //{
@@ -63,21 +61,22 @@ namespace BindSense.cs
             }
         }
 
-        private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.contextMenuStrip.Enabled = false;
-            RulesForm rulesForm = new RulesForm();
-            rulesForm.Show();
-            rulesForm.FormClosed += ((_sender, _e) =>
-            {
-                this.contextMenuStrip.Enabled = true;
-            });
-        }
+		// Gestures toolstip
+		private void gesturesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.contextMenuStrip.Enabled = false;
+			GesturesForm gesturesForm = new GesturesForm();
+			gesturesForm.Show();
+			gesturesForm.FormClosed += ((_sender, _e) =>
+			{
+				this.contextMenuStrip.Enabled = true;
+			});
+		}
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		// Exit toolstrip
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.trayIcon.Visible = false;
-            //trackingThread.Abort();
             Application.Exit();
         }
     }

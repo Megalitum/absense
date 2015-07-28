@@ -87,14 +87,22 @@ namespace BindSense.cs
                         //gestureData.name
                         //var current = FindWindow("CalcFrame", "Internet Explorer");
                         //SetForegroundWindow(current);
-
-                        string key = Rules.get(gestureData.name);
-                        if (key != null)
-                        {
-                            SendKeys.SendWait(key);
-                            //SendKeys.SendWait("a");
-                            //Thread.Sleep(400);
-                        }
+						
+						//
+						//
+						//
+						//
+						// RULES WERE HERE 
+						//
+						//
+						//
+						//string key = Rules.get(gestureData.name);
+						//if (key != null)
+						//{
+						//	SendKeys.SendWait(key);
+						//	//SendKeys.SendWait("a");
+						//	//Thread.Sleep(400);
+						//}
                         //SendKeys.SendWait("aaa");
 
 

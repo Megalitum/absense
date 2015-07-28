@@ -111,27 +111,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationMatcher.cs" />
-    <Compile Include="GestureService.cs" />
-    <Compile Include="HandsRecognition.cs" />
-    <Compile Include="KeyPressForm.cs">
+    <Compile Include="BindableEntity.cs" />
+    <Compile Include="GesturesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KeyPressForm.Designer.cs">
-      <DependentUpon>KeyPressForm.cs</DependentUpon>
+    <Compile Include="GesturesForm.Designer.cs">
+      <DependentUpon>GesturesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestureService.cs" />
+    <Compile Include="GesturesPresets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GesturesPresets.Designer.cs">
+      <DependentUpon>GesturesPresets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuiUtility.cs" />
+    <Compile Include="HandsRecognition.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Rules.cs" />
-    <Compile Include="RulesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RulesForm.designer.cs">
-      <DependentUpon>RulesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +152,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="timer.cs" />
+    <Compile Include="WinApiUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -183,14 +184,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="KeyPressForm.resx">
-      <DependentUpon>KeyPressForm.cs</DependentUpon>
+    <EmbeddedResource Include="GesturesForm.resx">
+      <DependentUpon>GesturesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RulesForm.resx">
-      <DependentUpon>RulesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
@@ -206,6 +204,10 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
